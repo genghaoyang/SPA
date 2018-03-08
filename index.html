@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+<div class="jixuanqi">
+  <form>
+    <input type="text" id="kuandu">宽度
+    <br>
+    <input type="text" id="changdu">长度
+    <br>
+    <button type="button" id="anniu" >计算</button>
+    <br>
+    <input type="text"  id="zhouchang">周长
+    <br>
+    <input type ="text" id="mianji">面积
+  </form>
+
+</div>
+
+<script>
+ var calc=document.getElementById('anniu');
+ var width=document.getElementById('kuandu');
+ var height=document.getElementById('changdu');
+ var   perimeter=document.getElementById('zhouchang');
+ var area=document.getElementById('mianji');
+  calc.onclick=function(){
+   
+   var wv=parseFloat(width.value);
+   var hv=parseFloat(height.value);
+   perimeter.value=(wv+hv)*2;
+   area.value=wv*hv;
+ }
+
+
+
+
+</script>
+
+</body>
+</html>
