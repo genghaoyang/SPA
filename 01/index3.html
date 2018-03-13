@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div class="pro">
+  下载进度：
+  <progress id="progress" value="0" max="100"></progress>
+</div>
+</br>
+<button id="start">开始</button>
+<button id="stop">暂停</button>
+<button id="restart">重置</button>
+</body>
+<script>
+    var startbtn = document.getElementById('start');
+    var stopbtn = document.getElementById('stop');
+    var rebtn = document.getElementById('restart');
+    var pro = document.getElementById('progress');
+    var max=pro.max;
+    var id=0;
+
+    startbtn.onclick = function(){
+      if(id !=0){
+
+      }else{
+        id=setInterval(function(){
+            if(pro.value==max){
+            clearInterval(id);
+            alert('下载完成');
+            }
+pro.value++;
+
+            },100);
+      }
+
+    }
+stopbtn.onclick = function(){
+  clearInterval(id);
+  id = 0;
+}
+rebtn.onclick = function(){
+  pro.value = 0;
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

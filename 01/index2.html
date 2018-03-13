@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+  <title></title>
+</head>
+<body>
+<label for="">密码:</label>
+<input type ="password" id='pass'/>
+<button value="可见"  id='see'>*</button>
+</body>
+<script> 
+  var pass = document.getElementById('pass');
+  var see= document.getElementById('see');
+   see.onmouseover=function(){
+   pass.type="text";
+ }
+see.onmouseout=function(){
+  pass.type="password";
+}
+</script>
+</html>

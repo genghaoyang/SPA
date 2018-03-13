@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title></title>
+</head>
+<body>
+<label for="">年龄：</label>
+<input type="range" min="0" max="100" step="1" value="0" id="ran" style="width:200px;"/>
+</br>
+你的年龄是：<span id="num">0</span>岁
+</body>
+<script>
+ var ran = document.getElementById('ran');
+ ran.onmouseup=function(){
+   var num = document.getElementById('num');
+   num.innerHTML=ran.value; 
+}
+</script>
+</html>
