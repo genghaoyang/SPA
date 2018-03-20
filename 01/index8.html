@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+<div class="rectangle">
+  <label for="">长度：</label>
+  <input id = "rectangle_width" type="textbox">
+  <span class="col">*</span>
+  <div id = "len"></div>
+  <br>
+  <label for="">宽度：</label>
+  <input id ="rectangle_height" type="textbox">
+  <span class="col">*</span>
+  <div id = "hei"></div>
+  <br>
+  <input id = "rectangle_calc" type="button" value = "计算" onclick="clickFun()">
+  <br>
+  <label for="">面积:</label>
+  <input id ="rectangle_area" type="textbox" readonly="true">
+  <br>
+  <label for = "">周长：</label>
+  <input id = "rectangle_cir" type="textbox" readonly="true">
+</div>
+
+<script>
+window.onload = function(){
+  var rectangle_width = document.getElementById('rectangle_width');
+  rectangle_width.focus();
+  rectangle_width.onblur = function(){
+    if(rectangle_width.value ==''){
+      document.getElementById('len').innerHTML='长度不能为空！';
+    }
+    else if(isNaN(rectangle_width.value)){
+      document.getElementById('len').innerHTML = '长度必须是数字！';
+    }
+    else if(rectangle_width.value<0){
+      document.getElementById('len').innerHTML='长度必须大于零！';
+
+
+    }else{
+      document.getElementById('len').innerHTML='';
+ 
+    }
+  }
+  var rectangle_height = document.getElementById('rectangle_height');
+  rectangle_height.onblur = function(){
+    if(rectangle_height.value==''){
+        document.getElementById('hei').innerHTML='宽度不能为空！';
+        }
+    else if(isNaN(rectangle_height.value)){
+      document.getElementById('hei').innerHTML='宽度必须是数字!';
+    }
+    else if(rectangle_height.value<0){
+      document.getElementById('hei').innerHTML = '宽度必须大于零!';
+    }else{
+      document.getElementById('hei').innerHTML='';
+  
+    }
+  }
+};
+ var onclick=clickFun();
+  function clickFun(){
+    var widVal = document.getElementById('rectangle_width').value;
+    var heiVal = document.getElementById('rectangle_height').value;
+    var cir = 2*parseFloat(widVal)+parseFloat(heiVal)*2;
+    var area = widVal * heiVal;
+    document.getElementById('rectangle_area').value = Math.round(area*100000)/100000;
+ 
+    document.getElementById('rectangle_cir').value = Math.round(cir*100000)/100000;
+  }
+
+
+</script>
+
+</body>
+</html>
