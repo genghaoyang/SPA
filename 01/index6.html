@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+
+<body>
+<div class="rectangle">
+  <label for="">长度：</label>
+  <input id = "rectangle_width" type="textbox">
+  <span class="col">*</span>
+  <div id = "len"></div>
+  <br>
+  <label for="">宽度：</label>
+  <input id ="rectangle_height" type="textbox">
+  <span class="col">*</span>
+  <div id = "hei"></div>
+  <br>
+  <input id = "rectangle_calc" type="button" value = "计算">
+  <br>
+  <label for="">面积：</label>
+  <input id ="rectangle_area" type="textbox" readonly="true">
+  <br>
+  <label for = "">周长：</label>
+
+  <input id = "rectangle_cir" type="textbox" readonly="true">
+</div>
+
+<script>
+window.onload = function(){
+  var rectangle_width = document.getElementById('rectangle_width'),
+  var rectangle_height = document.getElementById('rectangle_height'),
+  calc = document.getElementById('rectangle_calc'),
+  rectangle_area = document.getElementById('rectangle_area'),
+  rectangle_cir = document.getElementById('rectangle_cir');
+
+  rectangle_width.focus();
+  rectangle_width.onkeypress = function(e){
+    charCheck(e);
+  };
+  rectangle_height.onkeypress = function(e){
+    charCheck(e);
+  };
+  calc.onclick=function(){
+    clickFun(rectangle_width,rectangle_height,rectangle_area.rectangle_cir);
+  };
+};
+
+function clickFun(wid,hid,aid,cid){
+  var widVal = wid.value;
+  var heiVal = hid.value;
+  var cir = 2*parseFloat(widVal)+parseFloat(heiVal)*2;
+  var area = widVal*heiVal;
+
+  
+}
+function charCheck(event){
+  if(/[abcdf-zABCDF-Z!@##$%^&(*))]/.test(event.key))
+    event.preventDefault();
+}
+
+
+
+
+</script>
+</body>
+</html>
